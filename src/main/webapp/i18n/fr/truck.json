@@ -1,0 +1,28 @@
+{
+  "locationTruckApplicationApp": {
+    "truck": {
+      "home": {
+        "title": "Trucks",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Truck",
+        "createOrEditLabel": "Créer ou éditer un Truck",
+        "notFound": "Aucun Truck trouvé"
+      },
+      "created": "Un nouveau Truck a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Truck avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Truck avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Truck {{ id }} ?"
+      },
+      "detail": {
+        "title": "Truck"
+      },
+      "id": "ID",
+      "regionName": "Region Name",
+      "licensePlate": "License Plate",
+      "imageUrl": "Image Url",
+      "model": "Model",
+      "rental": "Rental"
+    }
+  }
+}

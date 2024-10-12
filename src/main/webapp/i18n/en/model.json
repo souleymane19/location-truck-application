@@ -1,0 +1,10 @@
+{
+  "locationTruckApplicationApp": {
+    "Model": {
+      "null": "",
+      "PETIT": "PETIT",
+      "MOYEN": "MOYEN",
+      "GRAND": "GRAND"
+    }
+  }
+}
