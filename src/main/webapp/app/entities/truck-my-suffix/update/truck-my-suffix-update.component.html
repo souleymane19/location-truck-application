@@ -1,0 +1,81 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-truck-my-suffix-heading"
+        data-cy="TruckCreateUpdateHeading"
+        jhiTranslate="locationTruckApplicationApp.truck.home.createOrEditLabel"
+      >
+        Créer ou éditer un Truck
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="locationTruckApplicationApp.truck.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_regionName" jhiTranslate="locationTruckApplicationApp.truck.regionName">Region Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="regionName"
+            id="field_regionName"
+            data-cy="regionName"
+            formControlName="regionName"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_licensePlate" jhiTranslate="locationTruckApplicationApp.truck.licensePlate"
+            >License Plate</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="licensePlate"
+            id="field_licensePlate"
+            data-cy="licensePlate"
+            formControlName="licensePlate"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_imageUrl" jhiTranslate="locationTruckApplicationApp.truck.imageUrl">Image Url</label>
+          <input type="text" class="form-control" name="imageUrl" id="field_imageUrl" data-cy="imageUrl" formControlName="imageUrl" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_model" jhiTranslate="locationTruckApplicationApp.truck.model">Model</label>
+          <select class="form-control" name="model" formControlName="model" id="field_model" data-cy="model">
+            <option [ngValue]="null">{{ 'locationTruckApplicationApp.Model.null' | translate }}</option>
+            @for (model of modelValues; track $index) {
+              <option [value]="model">{{ 'locationTruckApplicationApp.Model.' + model | translate }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Annuler</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Sauvegarder</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

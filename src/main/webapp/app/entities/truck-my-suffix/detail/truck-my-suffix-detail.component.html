@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (truck(); as truckRef) {
+      <div>
+        <h2 data-cy="truckDetailsHeading"><span jhiTranslate="locationTruckApplicationApp.truck.detail.title">Truck</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ truckRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="locationTruckApplicationApp.truck.regionName">Region Name</span></dt>
+          <dd>
+            <span>{{ truckRef.regionName }}</span>
+          </dd>
+          <dt><span jhiTranslate="locationTruckApplicationApp.truck.licensePlate">License Plate</span></dt>
+          <dd>
+            <span>{{ truckRef.licensePlate }}</span>
+          </dd>
+          <dt><span jhiTranslate="locationTruckApplicationApp.truck.imageUrl">Image Url</span></dt>
+          <dd>
+            <span>{{ truckRef.imageUrl }}</span>
+          </dd>
+          <dt><span jhiTranslate="locationTruckApplicationApp.truck.model">Model</span></dt>
+          <dd>
+            <span [jhiTranslate]="'locationTruckApplicationApp.Model.' + (truckRef.model ?? 'null')">{{
+              { null: '', PETIT: 'PETIT', MOYEN: 'MOYEN', GRAND: 'GRAND' }[truckRef.model ?? 'null']
+            }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+        </button>
+
+        <button type="button" [routerLink]="['/truck-my-suffix', truckRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

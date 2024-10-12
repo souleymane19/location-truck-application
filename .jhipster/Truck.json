@@ -1,0 +1,39 @@
+{
+  "angularJSSuffix": "mySuffix",
+  "annotations": {
+    "changelogDate": "20241012065233"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "regionName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "licensePlate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "imageUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "model",
+      "fieldType": "Model",
+      "fieldValues": "PETIT,MOYEN,GRAND"
+    }
+  ],
+  "name": "Truck",
+  "relationships": [
+    {
+      "otherEntityName": "rental",
+      "otherEntityRelationshipName": "rentals",
+      "relationshipName": "rental",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
