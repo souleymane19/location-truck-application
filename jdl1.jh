@@ -1,0 +1,35 @@
+entity Truck {
+    regionName String
+    licensePlate String
+    imageUrl String
+    model Model
+}
+
+enum Model {
+    PETIT, MOYEN, GRAND
+}
+
+entity Rental {
+    streetAddress String
+    postalCode String
+    city String
+    stateProvince String
+}
+
+// Relation OneToMany entre Truck et Rental
+// Relation OneToMany entre Truck et Rental
+relationship OneToMany {
+    Truck to Rental {rentals}
+}
+
+// Pagination pour Rental
+paginate Rental with pagination
+
+// Utiliser des Data Transfer Objects (DTO) avec MapStruct
+dto * with mapstruct
+
+// Générer les services pour toutes les entités avec implémentation
+service all with serviceImpl
+
+// Suffixe Angular pour tous les composants Angular
+angularSuffix * with mySuffix
